@@ -2,3 +2,4 @@ fastapi
 uvicorn
 pytest
 google-api-python-client
+python-dotenv

@@ -1,6 +1,6 @@
 import uvicorn
 
-from endpoints.app import create_app
+from rest.app import create_app
 
 app = create_app()
 
