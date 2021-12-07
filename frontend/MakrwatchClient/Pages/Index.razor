@@ -1,0 +1,18 @@
+﻿@page "/"
+
+<MudGrid Spacing="1">
+  <MudItem xs=3>
+    <MudPaper Height="100%" Width="100%" Style="background: #F9F9F9">
+      <img src="images/mw_logo.png" width="170" />
+      <MudTextField @bind-Value="Search" Label="Search" Variant="Variant.Outlined"
+                    Adornment="Adornment.Start" AdornmentIcon="@Icons.Filled.Search" />
+    </MudPaper>
+  </MudItem>
+  <MudItem xs=9 Style="background: #FFFFFF">
+    <MudText Typo="Typo.h3" GutterBottom="true">Body</MudText>
+  </MudItem>
+</MudGrid>
+
+@code {
+  public string Search { get; set; }
+}
