@@ -102,7 +102,7 @@ class YoutubeApiRepository(YoutubeRepositoryInterface):
 
         return videos_ids
 
-    def _get_videos_stats_filtered(self, videos_id, min_video_reviews, max_video_views):
+    def _get_videos_stats_filtered(self, videos_id, min_video_views, max_video_views):
         videos_stats = {}
         videos_reponse = []
 
@@ -122,8 +122,8 @@ class YoutubeApiRepository(YoutubeRepositoryInterface):
             item['statistics']['viewCount'] = int(item['statistics']['viewCount'])  
 
             # validate channel
-            #if min_video_views <= item['statistics']['viewCount'] <= max_video_views:
-            if item['statistics']['viewCount'] >= min_video_reviews:
+            if min_video_views <= item['statistics']['viewCount'] <= max_video_views:
+            # if item['statistics']['viewCount'] >= min_video_views:
                 videos_stats[item['id']] = item
 
         self._videos_stats = videos_stats
@@ -141,7 +141,7 @@ class YoutubeApiRepository(YoutubeRepositoryInterface):
             id = video_id,
             title = video_info['snippet']['title'],
             description = video_stats['snippet']['description'],
-            url = f"https://www.youtube.com/watch?v={video_id}",
+            url = f"https://www.youtube.com/embed/{video_id}?autoplay=0",
             thumbnail_url = video_info['snippet']['thumbnails']['high']['url'],
             published_at = video_info['snippet']['publishedAt'],
             total_views = video_stats['statistics']['viewCount'],

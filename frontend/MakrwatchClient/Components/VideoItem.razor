@@ -1,0 +1,26 @@
+﻿@inject ILocationService LocationService
+
+<tr>
+  <td>
+    <iframe width="370" height="250" src="@Video.Url" />
+  </td>
+  <td style="height: 250px; vertical-align:top">
+    <h4>@Video.Title</h4>
+    @Video.Stats
+    <div><img src="@Location.FlagUrl" />  @Location.Code</div>
+    <small>@Video.DescriptionWrapped</small>
+  </td>
+</tr>
+
+@code {
+  [Parameter]
+  public Video Video { get; set; } = new();
+
+  private Location Location
+  {
+    get
+    {
+      return LocationService.GetLocationByCode(Video.CountryCode);
+    }
+  }
+}

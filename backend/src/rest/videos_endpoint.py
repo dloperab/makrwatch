@@ -17,7 +17,7 @@ def search_youtube_videos(
     try:
         videos_response = social_videos_manager.search_youtube_videos(keywords, country_code, 
             min_subscribers, min_video_views, max_video_views)
-        
+
         return {"items": videos_response}
     except Exception as e:
         return {"error": str(e)}
