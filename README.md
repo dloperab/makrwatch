@@ -78,7 +78,7 @@ http://localhost:8080/docs
 ```bash
 cd .\backend\
 
-pytest 
+pytest -v
 ```
 
 ## Run the Frontend

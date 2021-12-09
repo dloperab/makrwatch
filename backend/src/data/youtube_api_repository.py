@@ -146,7 +146,6 @@ class YoutubeApiRepository(YoutubeRepositoryInterface):
 
             # validate channel
             if min_video_views <= item['statistics']['viewCount'] <= max_video_views:
-            # if item['statistics']['viewCount'] >= min_video_views:
                 videos_stats[item['id']] = item
 
         self._videos_stats = videos_stats
