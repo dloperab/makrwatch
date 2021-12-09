@@ -104,5 +104,5 @@ Wait for the app to display that it's listening on **localhost:port-number** and
 
 # Video debrief presentation 
 
-* [Youtube Video]()
+* [Youtube Video](https://www.youtube.com/watch?v=RPgkHRI8o90)
 * [Presentation](docs/presentation/video_debrief_presentation.pdf)
