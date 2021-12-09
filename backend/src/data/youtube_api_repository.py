@@ -7,7 +7,16 @@ from domain.repositories import YoutubeRepositoryInterface
 MAX_RESULTS: Final = 100
 
 class YoutubeApiRepository(YoutubeRepositoryInterface):
+    '''
+    The Youtube API Repository object to search for videos using the Youtube API
+    '''
+
     def __init__(self, youtube_service):
+        """Constructor
+
+        Args:
+            youtube_service: Youtube service object to use the API
+        """
         self._yt_service = youtube_service
         self._videos_response = []
         self._videos_stats = {}
@@ -15,6 +24,20 @@ class YoutubeApiRepository(YoutubeRepositoryInterface):
 
     def search(self, keywords: str, country_code: None, min_subscribers: int, 
         min_video_views: int, max_video_views: int) -> List[Video]:
+        """
+        Search for videos using the Youtube API applying the filters
+
+        Args:
+            keywords (str): The keywords to search.
+            country_code (None): The country code to search.
+            min_subscribers (int): The minimum number of subscribers to search.
+            min_video_views (int): The minimum number of views to search.
+            max_video_views (int): The maximum number of views to search.
+
+        Returns:
+            List[Video]: Videos found on Youtube
+        """
+
         videos_result: List[Video] = []
         
         # search videos

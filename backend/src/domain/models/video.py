@@ -2,6 +2,10 @@ from dataclasses import dataclass
 
 @dataclass
 class Video:
+    '''
+    Video class to manage video data
+    '''
+
     id: str
     title: str
     description: str
