@@ -95,7 +95,7 @@ dotnet restore
 Run the project
 
 ```bash
-dotnet watch
+dotnet run
 ```
 
 Wait for the app to display that it's listening on **localhost:port-number** and for the browser to launch at that address

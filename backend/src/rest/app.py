@@ -5,10 +5,7 @@ from dotenv import load_dotenv
 
 from . import videos_endpoint
 
-origins = [
-    "http://localhost",
-    "https://localhost:44306",
-]
+origins = ["*"]
 
 # Load environment variables from .env file
 load_dotenv()
