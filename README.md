@@ -76,6 +76,8 @@ http://localhost:8080/docs
 ## Test the Backend
 
 ```bash
+cd .\backend\
+
 pytest 
 ```
 
@@ -99,3 +101,8 @@ dotnet run
 ```
 
 Wait for the app to display that it's listening on **localhost:port-number** and for the browser to launch at that address
+
+# Video debrief presentation 
+
+* [Youtube Video]()
+* [Presentation](docs/presentation/video_debrief_presentation.pdf)
